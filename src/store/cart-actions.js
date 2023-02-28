@@ -42,7 +42,10 @@ export const sendCartData = (cart) => {
         "https://tutreacttwo-default-rtdb.europe-west1.firebasedatabase.app/cart.json",
         {
           method: "PUT",
-          body: JSON.stringify(cart), //to JSON
+          body: JSON.stringify({
+            items: cart.items,
+            totalQuantity: cart.totalQuantity,
+          }), //to JSON
         }
       );
 
